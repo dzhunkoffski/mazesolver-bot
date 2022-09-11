@@ -1,7 +1,6 @@
 from aiogram import types
 from aiogram.dispatcher import FSMContext
 from aiogram.types import ContentType, InputFile
-from PIL import Image, ImageEnhance
 
 from loader import dp
 from aiogram.dispatcher.filters import Command
@@ -14,7 +13,7 @@ import cv2
 import matplotlib.pyplot as plt
 import graph
 
-from PIL import Image, ImageEnhance
+from PIL import Image
 
 
 @dp.message_handler(Command('solve'))
@@ -71,8 +70,8 @@ async def handle_endpoints(msg: types.Message, state: FSMContext):
         img = cv2.imread('media/' + file_id + '/maze.png')
         start_point = data.get('waitStartPointState')
         end_point = data.get('waitEndPointState')
-        cv2.circle(img, start_point, 1, (0, 255, 0), -1)
-        cv2.circle(img, end_point, 1, (255, 0, 0), -1)
+        cv2.circle(img, start_point, 3, (0, 255, 0), -1)
+        cv2.circle(img, end_point, 3, (255, 0, 0), -1)
         plt.imshow(img)
         plt.savefig('media/' + file_id + '/maze_fig.png')
         await dp.bot.send_photo(chat_id=msg.from_user.id,
@@ -90,8 +89,8 @@ async def handle_endpoints(msg: types.Message, state: FSMContext):
         image.save('media/' + file_id + '/maze.png')
 
         img = cv2.imread('media/' + file_id + '/maze.png')
-        cv2.circle(img, start_point, 1, (0, 255, 0), -1)
-        cv2.circle(img, end_point, 1, (255, 0, 0), -1)
+        cv2.circle(img, start_point, 3, (0, 255, 0), -1)
+        cv2.circle(img, end_point, 3, (255, 0, 0), -1)
         plt.imshow(img)
         plt.savefig('media/' + file_id + '/maze_fig.png')
         await dp.bot.send_photo(chat_id=msg.from_user.id,
