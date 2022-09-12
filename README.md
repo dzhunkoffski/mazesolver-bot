@@ -17,6 +17,8 @@ an empty space around the maze
 * `/example2` a hand-drawn maze
 
 ## Demo
-![scr1](https://github.com/dzhunkoffski/mazesolver-bot/blob/main/media/examples/screen1.jpg)
-![scr2](https://github.com/dzhunkoffski/mazesolver-bot/blob/main/media/examples/screen2.jpg)
-![scr3](https://github.com/dzhunkoffski/mazesolver-bot/blob/main/media/examples/screen3.jpg)
+<p float="left">
+  <img src="https://github.com/dzhunkoffski/mazesolver-bot/blob/main/media/examples/screen1.jpg" width="100" />
+  <img src="https://github.com/dzhunkoffski/mazesolver-bot/blob/main/media/examples/screen2.jpg" width="100" /> 
+  <img src="https://github.com/dzhunkoffski/mazesolver-bot/blob/main/media/examples/screen3.jpg" width="100" />
+</p>
