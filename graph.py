@@ -35,10 +35,10 @@ class Graph():
 
     def is_valid(self, curr_p, move):
         """Validate movement"""
-        if 0 <= curr_p[0] + move[0] < self.width and 0 <= curr_p[1] + move[1] < self.height:
-            return True if self.maze[curr_p[0] + move[0], curr_p[1] + move[1]] == 0 else False
-        else:
-            return False
+        if (0 <= curr_p[0] + move[0] < self.width and 0 <= curr_p[1] + move[1] < self.height):
+            if self.maze[curr_p[0] + move[0], curr_p[1] + move[1]] == 0:
+                return True
+        return False
 
     def bfs(self, start_point):
         """BFS algorithm"""
