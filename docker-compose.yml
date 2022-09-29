@@ -4,7 +4,7 @@ services:
   mazesolver-bot:
     image: dzhoonk/mazesolver-bot
     environment:
-      BOT_TOKEN: ${{ secrets.WORKFLOW_TOKEN }}
+      BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
 
   watchtower:
     image: containrrr/watchtower
