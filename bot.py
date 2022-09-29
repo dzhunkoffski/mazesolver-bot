@@ -1,10 +1,12 @@
-async def on_startup(dp):
+# pylint: disable=missing-module-docstring
 
-    from utils.notify_admins import on_startup_notify
-    await on_startup_notify(dp)
+from utils.notify_admins import on_startup_notify
+from utils.set_bot_commands import set_default_commands
 
-    from utils.set_bot_commands import set_default_commands
-    await set_default_commands(dp)
+async def on_startup(dispatch):
+    """What will bot do on a startup"""
+    await on_startup_notify(dispatch)
+    await set_default_commands(dispatch)
 
 
     print('Bot executed')

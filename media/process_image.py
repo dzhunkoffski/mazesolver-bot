@@ -1,10 +1,13 @@
-from PIL import Image, ImageEnhance
-import os
+# pylint: disable=missing-module-docstring
+# pylint: disable=E1101
+
+from PIL import Image
 import cv2
 import matplotlib.pyplot as plt
 
 
 def resize_image(image, base_width=100):
+    """Change image size for faster computations"""
     ratio = base_width / float(image.size[0])
     height = int(float(image.size[1]) * float(ratio))
     image = image.resize((base_width, height), Image.ANTIALIAS)
@@ -12,6 +15,7 @@ def resize_image(image, base_width=100):
 
 
 def prepare_image(image_path, is_resize=False):
+    """Convert image to black and white format"""
     image_name = image_path.split('.')[0]
     image = Image.open(image_path)
     if is_resize and (image.size[0] > 250 or image.size[1] > 250):
@@ -32,6 +36,7 @@ def prepare_image(image_path, is_resize=False):
 
 
 def pick_start(point, image_path):
+    """Set start point and show it on a maze to user"""
     image_name = image_path.split('.')[0]
     image = Image.open(image_path)
     pixels = image.load()
@@ -46,6 +51,7 @@ def pick_start(point, image_path):
 
 
 def pick_end(point, image_path):
+    """Set end point and show it on a maze to user"""
     image = Image.open(image_path)
     pixels = image.load()
     if pixels[point[0], point[1]] == (0, 0, 0):
