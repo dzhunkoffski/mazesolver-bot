@@ -1,4 +1,4 @@
-# pylint: disable=missing-module-docstring
+#pylint: disable=missing-module-docstring
 from aiogram import types
 
 async def set_default_commands(dispatcher):
