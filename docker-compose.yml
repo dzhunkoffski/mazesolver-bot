@@ -7,8 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      # BOT_TOKEN: ${BOT_TOKEN}
-      - BOT_TOKEN=5033258071
+      - BOT_TOKEN=${{secrets.BOT_TOKEN}}
 
   watchtower:
     image: containrrr/watchtower
