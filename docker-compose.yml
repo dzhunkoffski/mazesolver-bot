@@ -1,7 +1,7 @@
 version: '2'
 
 services:
-  mazesolver-bot:
+  app:
     image: dzhoonk/mazesolver-bot
     environment:
       # BOT_TOKEN: ${BOT_TOKEN}
