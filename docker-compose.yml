@@ -4,8 +4,8 @@ services:
   mazesolver-bot:
     image: dzhoonk/mazesolver-bot
     environment:
-      # BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
-      BOT_TOKEN: "5033258071"
+      BOT_TOKEN: ${BOT_TOKEN}
+      # BOT_TOKEN: "5033258071"
 
   watchtower:
     image: containrrr/watchtower
